@@ -14,7 +14,7 @@
             <form action="/logout" method="POST">
                 @csrf
                 <button
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium my-2 rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">Logout</button>
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium  rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">Logout</button>
             </form>
         </div>
                     <button data-collapse-toggle="navbar-sticky" type="button"
@@ -70,7 +70,7 @@
                         <img src="{{ asset('assets/images/top.jpg') }}" class="rounded-lg">
                         <h3 class="text-xl font-semibold py-2">{{ $post['title'] }} by {{ $post->user->name }}</h3>
                         {{ $post['body'] }}
-                        <div class="flex justify-between pt-5">
+                        <div class="flex justify-between mt-5">
                         <p class="py-2 px-5 text-center border border-blue-700 rounded-md font-semibold"><a href="/edit-post/{{ $post->id }}">Edit</a></p>
                         <form action="{{ route('posts.delete', $post) }}" method="POST">
                             @csrf
