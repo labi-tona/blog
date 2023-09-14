@@ -3,10 +3,10 @@
   <header class="absolute inset-x-0 top-0 z-50">
     <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1">
-        <a href="#" class="-m-1.5 p-1.5">
-          <span class="sr-only">Your Company</span>
-          <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
-        </a>
+       <a href="#" class="flex items-center">
+                    <img src="{{ asset('assets/images/statue.png') }}" class="rounded-lg   w-5">
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">IBLOG</span>
+                </a>
       </div>
       <div class="flex lg:hidden">
         <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
@@ -84,4 +84,14 @@
     </div>
   </div>
 </div>
+      <div class="grid grid-cols-3 gap-x-8 gap-y-16 justify-center mx-auto border-tborder-gray-200 pt-10 ">
+                @foreach ($posts as $post)
+                    <div class="">
+                        <img src="{{ asset('assets/images/top.jpg') }}" class="rounded-lg">
+                        <h3 class="text-xl font-semibold py-2">{{ $post['title'] }} by {{ $post->user->name }}</h3>
+                        {{ $post['body'] }}
+                     
+                    </div>
+                @endforeach
+            </div>
 
